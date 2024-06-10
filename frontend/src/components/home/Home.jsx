@@ -5,12 +5,18 @@ import * as THREE from "three";
 
 import moonImage from "../../Images/moon.jpg";
 import venusImage from "../../Images/venus.jpg";
+import spaceImage from "../../Images/space.jpg";
+import {Typography} from "@mui/material" 
+import TimeLine from "../TimeLine/TimeLine";
+
 
 const Home = () => {
   useEffect(() => {
     const textureloader = new THREE.TextureLoader();
     const moonTexture = textureloader.load(moonImage);
     const venusTexture = textureloader.load(venusImage);
+    const spaceTexture = textureloader.load(spaceImage);
+
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
@@ -19,7 +25,7 @@ const Home = () => {
       0.1,
       1000
     );
-    camera.position.set(4, 4, 8);
+    camera.position.set(3.5, 3.5, 8);
     const canvas = document.querySelector(".homeCanvas");
     const renderer = new THREE.WebGLRenderer({ canvas });
 
@@ -35,8 +41,8 @@ const Home = () => {
     const venus = new THREE.Mesh(venusGemetry, venusMaterial);
   venus.position.set(8, 5, 5);
     // pointLight
-    const pointLight = new THREE.PointLight(0xffffff, 23);
-    const pointLight2 = new THREE.PointLight(0xffffff, 2);
+    const pointLight = new THREE.PointLight(0xffffff, 30);
+    const pointLight2 = new THREE.PointLight(0xffffff, 1);
    
     scene.add(moon);
     scene.add(venus); 
@@ -44,6 +50,7 @@ const Home = () => {
     pointLight2.position.set(-8,-5,-5);
     scene.add(pointLight);
     scene.add(pointLight2);
+    scene.background=spaceTexture;
 
     /*//pointLightHelper
      const lightHelper = new THREE.PointLightHelper(pointLight);
@@ -114,61 +121,14 @@ const Home = () => {
   return (
     <div className="home">
       <canvas className="homeCanvas"></canvas>
+       <div className="homeContainer">
+        <Typography variant="h3">TIMELINE</Typography>
+        <TimeLine timelines={[1,2,3,4]}/>
+
+      </div> 
     </div>
   );
 };
 
 export default Home;
 
-// import React, { useEffect } from 'react';
-// import "./Home.css";
-// import * as THREE from 'three';
-
-// const Home = () => {
-//   useEffect(() => {
-//     const scene = new THREE.Scene();
-//     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-//     camera.position.z = 5;
-
-//     const canvas = document.querySelector('.homeCanvas');
-//     const renderer = new THREE.WebGLRenderer({ canvas });
-//     renderer.setSize(window.innerWidth, window.innerHeight);
-
-//     const geometry = new THREE.BoxGeometry(1, 1, 1);
-//     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-//     const mesh = new THREE.Mesh(geometry, material);
-
-//     scene.add(mesh);
-//     mesh.rotation.y = 1;
-
-//     const animate = () => {
-//       requestAnimationFrame(animate);
-//       mesh.rotation.x += 0.01;
-//       mesh.rotation.y += 0.01;
-//       renderer.render(scene, camera);
-//     };
-
-//     animate();
-
-//     const handleResize = () => {
-//       camera.aspect = window.innerWidth / window.innerHeight;
-//       camera.updateProjectionMatrix();
-//       renderer.setSize(window.innerWidth, window.innerHeight);
-//     };
-
-//     window.addEventListener('resize', handleResize);
-
-//     return () => {
-//       window.removeEventListener('resize', handleResize);
-//       renderer.dispose();
-//     };
-//   }, []);
-
-//   return (
-//     <div className='home'>
-//       <canvas className='homeCanvas'></canvas>
-//     </div>
-//   );
-// };
-
-// export default Home;
