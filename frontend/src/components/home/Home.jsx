@@ -6,9 +6,8 @@ import * as THREE from "three";
 import moonImage from "../../Images/moon.jpg";
 import venusImage from "../../Images/venus.jpg";
 import spaceImage from "../../Images/space.jpg";
-import {Typography} from "@mui/material" 
+import { Typography } from "@mui/material";
 import TimeLine from "../TimeLine/TimeLine";
-
 
 const Home = () => {
   useEffect(() => {
@@ -33,77 +32,61 @@ const Home = () => {
     const moonGemetry = new THREE.SphereGeometry(2, 64, 64);
     const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
     const moon = new THREE.Mesh(moonGemetry, moonMaterial);
-  
-
 
     const venusGemetry = new THREE.SphereGeometry(3, 64, 64);
     const venusMaterial = new THREE.MeshBasicMaterial({ map: venusTexture });
     const venus = new THREE.Mesh(venusGemetry, venusMaterial);
-  venus.position.set(8, 5, 5);
+    venus.position.set(8, 5, 5);
     // pointLight
     const pointLight = new THREE.PointLight(0xffffff, 30);
     const pointLight2 = new THREE.PointLight(0xffffff, 1);
-   
+    pointLight.position.set(8, 5, 5);
+    pointLight2.position.set(-8, -5, -5);
     scene.add(moon);
-    scene.add(venus); 
-    pointLight.position.set(8,5,5);
-    pointLight2.position.set(-8,-5,-5);
+    scene.add(venus);
     scene.add(pointLight);
     scene.add(pointLight2);
-    scene.background=spaceTexture;
+    scene.background = spaceTexture;
 
     /*//pointLightHelper
      const lightHelper = new THREE.PointLightHelper(pointLight);
      scene.add(lightHelper);
     */
 
-
-     const constSpeed =0.01;
-     window.addEventListener("mousemove",(e)=>{
-        if(e.clientX < window.innerWidth/2){
-            moon.rotation.x -=constSpeed;
-            moon.rotation.y += constSpeed;
-            venus.rotation.x -=constSpeed;
-            venus.rotation.y += constSpeed;
-
-        }
-        if(e.clientX > window.innerWidth/2){
-            moon.rotation.x -=constSpeed;
-            moon.rotation.y -= constSpeed;
-            venus.rotation.x -=constSpeed;
-            venus.rotation.y -= constSpeed;
-
-        }
-        if(e.clientY > window.innerHeight/2){
-            moon.rotation.x -=constSpeed;
-            moon.rotation.y += constSpeed;
-            venus.rotation.x -=constSpeed;
-            venus.rotation.y += constSpeed;
-
-        }
-         if(e.clientY <= window.innerHeight/2){
-            moon.rotation.x -=constSpeed;
-            moon.rotation.y -= constSpeed;
-            venus.rotation.x -=constSpeed;
-            venus.rotation.y -= constSpeed;
-
-        }
-        
-     });
-
-
-
- 
-
-  
-
+    const constSpeed = 0.01;
+    window.addEventListener("mousemove", (e) => {
+      if (e.clientX <= window.innerWidth / 2) {
+        moon.rotation.x -= constSpeed;
+        moon.rotation.y += constSpeed;
+        venus.rotation.x -= constSpeed;
+        venus.rotation.y += constSpeed;
+      }
+      if (e.clientX > window.innerWidth / 2) {
+        moon.rotation.x -= constSpeed;
+        moon.rotation.y -= constSpeed;
+        venus.rotation.x -= constSpeed;
+        venus.rotation.y -= constSpeed;
+      }
+      if (e.clientY > window.innerHeight / 2) {
+        moon.rotation.x -= constSpeed;
+        moon.rotation.y += constSpeed;
+        venus.rotation.x -= constSpeed;
+        venus.rotation.y += constSpeed;
+      }
+      if (e.clientY <= window.innerHeight / 2) {
+        moon.rotation.x -= constSpeed;
+        moon.rotation.y -= constSpeed;
+        venus.rotation.x -= constSpeed;
+        venus.rotation.y -= constSpeed;
+      }
+    });
 
     const animate = () => {
       requestAnimationFrame(animate);
       // moon.rotation.x +=0.01;
       // moon.rotation.y +=0.01;
-      moon.rotation.z += 0.01;
-      venus.rotation.z += 0.001;
+      moon.rotation.y += 0.01;
+      venus.rotation.y += 0.001;
 
       // camera.position.x+=0.01
       // moon.position.x +=0.01;
@@ -121,14 +104,12 @@ const Home = () => {
   return (
     <div className="home">
       <canvas className="homeCanvas"></canvas>
-       <div className="homeContainer">
+      <div className="homeContainer">
         <Typography variant="h3">TIMELINE</Typography>
-        <TimeLine timelines={[1,2,3,4]}/>
-
-      </div> 
+        <TimeLine timelines={[1, 2, 3, 4]} />
+      </div>
     </div>
   );
 };
 
 export default Home;
-

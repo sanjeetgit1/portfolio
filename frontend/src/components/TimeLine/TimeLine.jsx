@@ -3,12 +3,12 @@ import React from "react";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineContent from "@mui/lab/TimelineConnector";
+import TimelineConnector from "@mui/lab/TimelineConnector";
+import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import { Event } from "@mui/icons-material";
 import Typography from "@mui/material/Typography";
-import TimelineConnector from "@mui/lab/TimelineConnector";
 
 const TimeLine = ({ timelines = [] }) => {
   return (
@@ -20,7 +20,6 @@ const TimeLine = ({ timelines = [] }) => {
           align="right"
           variant="body2"
           color="text.secondary"
-
           >
             6/10/24</TimelineOppositeContent>
           <TimelineSeparator>
@@ -30,7 +29,8 @@ const TimeLine = ({ timelines = [] }) => {
             </TimelineDot>
             </TimelineConnector>
           </TimelineSeparator>
-          <TimelineContent sx={{py:"12px" , px:2}}>
+    
+          <TimelineContent sx={{    py:"12px" , px:2}}>
             <Typography variant="h6">Title</Typography>
             <Typography>Description</Typography>
           </TimelineContent>

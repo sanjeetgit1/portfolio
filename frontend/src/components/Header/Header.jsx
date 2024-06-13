@@ -11,7 +11,7 @@ const Header = () => {
       burgerColor="hsl(250, 100%, 75%)"
       burgerColorHover="hsl(250, 100%, 75%)"
       logo={logo}
-      logoWidth="250px"
+      logoWidth="50px"
       logoHoverColor="hsl(250, 100%, 75%)"
       nav2justifyContent="space-around"
       nav3justifyContent="space-around"

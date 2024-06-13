@@ -3,3 +3,16 @@
     height: 100vh;
     max-width:100%;
 }
+.homeContainer{
+    background-color: white;
+    padding-top: 4vmax;
+    border-radius: 0 0 200px 200px;
+    border-bottom: 200px solid white;
+    position: relative;
+    z-index: 1;
+}
+.homeContainer>h3{
+    text-align: center;
+    color: rgba(22, 19, 19, 0.861);
+    padding: 4vmax;
+}
