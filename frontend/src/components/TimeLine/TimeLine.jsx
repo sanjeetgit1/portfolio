@@ -22,17 +22,17 @@ const TimeLine = ({ timelines = [] }) => {
           color="text.secondary"
           >
             6/10/24</TimelineOppositeContent>
+
           <TimelineSeparator>
-            <TimelineConnector>
-            <TimelineDot>
-              <Event/>
-            </TimelineDot>
-            </TimelineConnector>
-          </TimelineSeparator>
-    
-          <TimelineContent sx={{    py:"12px" , px:2}}>
-            <Typography variant="h6">Title</Typography>
-            <Typography>Description</Typography>
+              <TimelineConnector />
+              <TimelineDot>
+                <Event />
+              </TimelineDot>
+              <TimelineConnector />
+            </TimelineSeparator>
+          <TimelineContent sx={{py:"12px" , px:2}}>
+          <Typography variant="h6">Title</Typography>
+          <Typography>Description</Typography>
           </TimelineContent>
         </TimelineItem>
       ))}
