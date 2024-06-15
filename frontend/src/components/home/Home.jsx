@@ -112,31 +112,33 @@ const Home = () => {
       <Typography variant="h3">Skills</Typography>
       <div className="homeCubeSkills">
         <div className="homeCubeSkillsFaces homeCubeSkillsFace1">
-        <img src="https://images.unsplash.com/photo-1717738118267-99f7c371127c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHx8" alt="Face1" />
+        <img src="https://images.unsplash.com/photo-1718139207078-0f55b2a8a34d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D" alt="Face1" />
         
         </div>
         <div className="homeCubeSkillsFaces homeCubeSkillsFace2">
-        <img src="https://plus.unsplash.com/premium_photo-1718169684197-adf733b5c7ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wxfHx8ZW58MHx8fHx8" alt="Face1" />
+        <img src="https://images.unsplash.com/photo-1718139207078-0f55b2a8a34d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D" alt="Face2" />
         
         </div>
         <div className="homeCubeSkillsFaces homeCubeSkillsFace3">
-        <img src="https://plus.unsplash.com/premium_photo-1718169684197-adf733b5c7ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wxfHx8ZW58MHx8fHx8" alt="Face1" />
+        <img src="https://plus.unsplash.com/premium_photo-1718169684197-adf733b5c7ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wxfHx8ZW58MHx8fHx8" alt="Face3" />
         
         </div>
         <div className="homeCubeSkillsFaces homeCubeSkillsFace4">
-        <img src="https://images.unsplash.com/photo-1632395627732-005012dbc286?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D" alt="Face1" />
+        <img src="https://images.unsplash.com/photo-1632395627732-005012dbc286?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D" alt="Face4" />
         
         </div>
         <div className="homeCubeSkillsFaces homeCubeSkillsFace5">
-        <img src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8" alt="Face1" />
+        <img src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8" alt="Face5" />
         
         </div>
         <div className="homeCubeSkillsFaces homeCubeSkillsFace6">
-        <img src="https://plus.unsplash.com/premium_photo-1718129293082-d2551c2c2003?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fHx8" alt="Face1" />
+        <img src="https://images.unsplash.com/photo-1718139207078-0f55b2a8a34d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D" alt="Face6" />
         
         </div>
 
+
       </div>
+      <div className="cubeshadow"></div>
       </div>
     </div>
   );

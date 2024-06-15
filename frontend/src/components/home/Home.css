@@ -44,10 +44,12 @@
     font-size: 4vmax;
 }
 
-.homeCubeSkills{
-    width: 200px;
-    height: 200px;
-    animation: cubeRotation 15s linear infinite alternate;
+.homeCubeSkills {
+  width: 200px;
+  height: 200px;
+  animation: cubeRotation 15s linear infinite alternate;
+  transform-style: preserve-3d;
+  
 }
 
 .homeCubeSkillsFaces{
@@ -58,6 +60,7 @@
     position: absolute;
     width: inherit;
     height: inherit;
+    opacity: 0.7;
 
 }
 .homeCubeSkillsFaces>img{
@@ -66,31 +69,46 @@
 
 
 }
+
 .homeCubeSkillsFace1{
-    transform: translate3d(0,0,150px);
+    transform: translate3d(0,0,100px);
 }
 .homeCubeSkillsFace2{
-    transform: rotate(180deg) translate3d(0,0,150px);
+    transform: rotateY(180deg) translate3d(0,0,100px);
 }
 .homeCubeSkillsFace3{
-    transform: rotate(-90deg) translate3d(0,0,150px);
+    transform: rotateY(-90deg) translate3d(0,0,100px);
 }
 .homeCubeSkillsFace4{
-    transform: rotate(90deg) translate3d(0,0,150px);
+    transform: rotateY(90deg) translate3d(0,0,100px);
 }
 .homeCubeSkillsFace5{
-    transform: rotate(90deg) translate3d(0,0,150px);
+    transform: rotateX(90deg) translate3d(0,0,100px);
 }
 .homeCubeSkillsFace6{
-    transform: rotate(-90deg) translate3d(0,0,150px);
+    transform: rotateX(-90deg) translate3d(0,0,100px);
 }
 
-
-@keyframes cubeRotation{
-    to{
-        transform: rotateY(360deg) rotateX(480) rotateZ(720deg);
+.cubeshadow{
+    width: 300px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.171);
+    border-radius: 50%;
+    margin-top: -10vmax;
+    animation: cubeShadow 10s ease-in-out infinite alternate;
+    filter: blur(3px);
+}
+@keyframes cubeRotation {
+    to {
+      transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);
     }
-}
+  }
+@keyframes cubeshadow {
+    to {
+      transform:scale(1.4) rotateY(-10px) ;
+    }
+  }
 
 
 
+ 
