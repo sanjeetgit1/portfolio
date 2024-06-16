@@ -1,13 +1,22 @@
 import React, { useEffect } from "react";
 import "./Home.css";
 import * as THREE from "three";
-// import { redirect } from 'react-router-dom';
-
 import moonImage from "../../Images/moon.jpg";
 import venusImage from "../../Images/venus.jpg";
 import spaceImage from "../../Images/space.jpg";
 import { Typography } from "@mui/material";
 import TimeLine from "../TimeLine/TimeLine";
+import {
+  SiCplusplus,
+  SiReact,
+  SiJavascript,
+  SiMongodb,
+  SiNodedotjs,
+  SiExpress,
+  SiCss3,
+  SiHtml5,
+  SiThreedotjs,
+} from "react-icons/si";
 
 const Home = () => {
   useEffect(() => {
@@ -86,7 +95,7 @@ const Home = () => {
       // moon.rotation.x +=0.01;
       // moon.rotation.y +=0.01;
       moon.rotation.y += 0.01;
-      venus.rotation.y += 0.001;
+      venus.rotation.y += 0.01;
 
       // camera.position.x+=0.01
       // moon.position.x +=0.01;
@@ -139,6 +148,18 @@ const Home = () => {
 
       </div>
       <div className="cubeshadow"></div>
+      <div className="homeSkillsBox">
+        <SiCplusplus />
+          <SiHtml5 />
+          <SiCss3 />
+          <SiJavascript />
+          <SiMongodb />
+          <SiExpress />
+          <SiReact />
+          <SiNodedotjs />
+          <SiThreedotjs />
+
+      </div>
       </div>
     </div>
   );
