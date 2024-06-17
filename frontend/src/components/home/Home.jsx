@@ -17,6 +17,7 @@ import {
   SiHtml5,
   SiThreedotjs,
 } from "react-icons/si";
+import Youtubecard from "../Youtubecard/Youtubecard";
 
 const Home = () => {
   useEffect(() => {
@@ -161,6 +162,29 @@ const Home = () => {
 
       </div>
       </div>
+      <div className="homeYoutube">
+        <Typography variant="h3">YOUTUBE VIDEOS</Typography>
+         <div className="homeYoutubeWrapper">
+          <Youtubecard
+          image="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+          title="Sample video"
+          />
+          <Youtubecard
+          image="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+          title="Sample video"
+          />
+          <Youtubecard
+          image="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+          title="Sample video"
+          />
+          <Youtubecard
+          image="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
+          title="Sample video"
+          />
+        
+         </div>
+      </div>
+     
     </div>
   );
 };
