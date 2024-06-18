@@ -35,6 +35,7 @@
     font-size: 3vmax;
     color:white;
     transition: all 0.3s;
+    padding: 5px;
 
 }
 .footer>div>a:nth-child(1):hover{

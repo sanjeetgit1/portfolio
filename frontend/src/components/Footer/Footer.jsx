@@ -21,10 +21,11 @@ const Footer = () => {
   </Link>
   </div>
   <div>
+  <Typography variant="h6">Social Media</Typography>
     <a href="https://github.com/sanjeetgit1" target='black'><BsGithub/></a>
     <a href="https://www.linkedin.com/in/sanjeet-kushwaha-54905b228/" target='black'><BsLinkedin/></a>
-    <a href="#" target='black'><BsInstagram/></a>
-    <a href="#" target='black'><BsYoutube/></a>
+    <a href="https://www.instagram.com/snajeet1272" target='black'><BsInstagram/></a>
+    <a href="https://www.youtube.com/channel/UCt_eqdYOQ-_IK6dRwyPen5A" target='black'><BsYoutube/></a>
   </div>
 
      </div>

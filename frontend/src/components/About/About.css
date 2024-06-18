@@ -1,0 +1,140 @@
+.about{
+    background-color: hsl(219, 48%, 8%);
+    display: flex;
+    min-height: 100vh;
+}
+.aboutContainer{
+    background-color: rgb(255, 255, 255);
+    width: 60%;
+    height: 70vh;
+    right: 0;
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    padding: 2vmax;
+    box-sizing: border-box;
+    
+}
+
+.aboutContainer>p{
+ 
+    text-align: right;
+    letter-spacing: 5px;
+    word-spacing: 5px;
+    line-height: 60px;
+    color: rgba(14, 13, 13, 0.806);
+    font-size: 1.5vmax;
+    width: 30%;
+
+}
+.aboutContainer2{
+    width: 60%;
+    /* margin-top: 5vmax; */
+    min-height: 80vh;
+    background-color:white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.299);
+    bottom: 0px;
+    box-sizing: border-box;
+    display: flex;
+    padding: 2vmax;
+    position: absolute;
+    transform: translateX(-100vw) translateY(-10%) rotate(-360deg) ;
+    animation: aboutAminmation 1s ease-in forwards;
+  
+
+ 
+}
+
+
+.aboutContainer2>div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1vmax;
+ 
+    color: rgba(19, 18, 18, 0.521);
+    box-sizing: border-box;
+ 
+}
+.aboutContainer2>div:first-child{
+    align-items: center;
+   
+}
+
+
+.aboutAvatar{
+    width: 250px;
+    height: 250px;
+  border-radius: 100%;
+    transition: all 1s;
+  
+}
+.aboutAvatar:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.509);
+}
+
+@keyframes aboutAminmation {
+    to{
+        transform: translateX(12%) translateY(-5%);
+    }
+    
+}
+@keyframes aboutAnimationphone {
+    to{
+        transform: translateX(0%) translateY(0%);
+    }
+    
+}
+@media screen and (max-width: 600px) {
+    .about {
+      align-items: flex-end;
+      padding-top: 100px;
+    }
+    .aboutContainer {
+      display: none;
+    }
+  
+    .aboutContainer2 {
+      width: 100%;
+      position: relative;
+      flex-direction: column;
+      animation: aboutAnimationphone 1s ease-in forwards;
+    }
+  
+    .aboutContainer2 > div:last-child > p {
+      text-align: center !important;
+    }
+  
+    .aboutAvatar {
+      width: 100px;
+      height: 100px;
+      transform: translateY(-80%);
+    }
+  }
+@media screen and (min-width: 600px) {
+    .about {
+      align-items: flex-end;
+      padding-top: 100px;
+    }
+    .aboutContainer {
+      display: none;
+    }
+  
+    .aboutContainer2 {
+      width: 100%;
+      position: relative;
+      flex-direction: column;
+      animation: aboutAnimationphone 1s ease-in forwards;
+    }
+  
+    .aboutContainer2 > div:last-child > p {
+      text-align: center !important;
+    }
+  
+    .aboutAvatar {
+      width: 100px;
+      height: 100px;
+      transform: translateY(-80%);
+    }
+  }
