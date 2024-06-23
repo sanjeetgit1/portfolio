@@ -1,16 +1,17 @@
-.projects {
-    background-color: hsl(221, 85%, 49%);
-    min-height: 100vh;
-    padding-top: 15vmax;
-    text-decoration-color: white;
 
+
+.projects {
+    background-color: hsl(219, 48%, 8%);
+    min-height: 100vh;
+    padding-top: 12vmax;
+ color: white;
   }
   
   
   
   .projects > h2 {
     text-align: center;
-    color: white;
+    /* color: rgb(255, 255, 255); */
     position: absolute;
     background-color: hsl(250, 100%, 75%);
     padding: 1vmax 4vmax;
@@ -18,6 +19,7 @@
     border-radius: 100px;
     align-items: center;
     left: 50%;
+    /* top: 20%; */
     transform: translate(-50%, -100vh);
     animation: projectHeadingAnimation 1s ease-in-out forwards;
   
@@ -25,9 +27,9 @@
   .projects > h2 > svg {
     margin: 1vmax;
   }
-  .projectsWrapper {
+  .porjectsWrapper {
     border-top: 100px solid white;
-    border-radius: 300px 300px 0 0;
+    border-radius: 300px 300px 0  0;
     min-height: inherit;
     background-color: white;
     display: flex;
@@ -44,11 +46,12 @@
     width: 80%;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.712);
-    margin: 2vmax;
+    margin: 6vmax;
     border-radius: 10px;
     display: flex;
     transform: translateX(-100vw);
     animation: projectCardAnimation 1s ease-in-out forwards 0.5s;
+
   }
   .projectCard:nth-child(even) {
     transform: translateX(100vw);
@@ -59,7 +62,6 @@
   .projectCard > div {
     width: 100%;
     display: flex;
-
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
@@ -102,16 +104,19 @@
   .projectCard > div > img {
     width: inherit;
   }
-/*   
-  .projectCard:hover div:first-child {
-    filter: hue-rotate(240deg) blur(4px);
-  } */
-  
-  @keyframes projectCardAnimation {
+
+  .projectCard:hover div:first-child{
+    filter:hue-rotate(240deg) blur(4px);
+  }
+.projects>h2> svg{
+  margin: 1vmax;
+}
+   @keyframes projectCardAnimation {
     to {
       transform: translateX(0);
     }
-  }
+  } 
+    
   
   @keyframes projectHeadingAnimation {
     to {
@@ -134,4 +139,4 @@
     .projectCard > div:last-child > p {
       text-align: center;
     }
-  }
+  } 
