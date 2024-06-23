@@ -19,17 +19,20 @@ const Contact = () => {
           <input
             type="text"
             placeholder="Name"
+            required
             value={Name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="text"
             placeholder="Email"
+            required
             value={Email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <textarea
             placeholder="Message"
+            required
             colse="30"
             rows="10"
             value={Message}

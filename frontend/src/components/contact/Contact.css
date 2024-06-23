@@ -53,6 +53,10 @@
     background-color: hsl(250, 100%, 75%);
     transform: translateY(-100vh);
     animation: contactFormBtn 1s ease-in-out forwards 1s;
+    padding: 0.5vmax;
+    border: none;
+    font-size: 1.2vmax;
+    font-weight: 700;
   }
   .contactContainerForm > button:hover {
     background-color: hsl(219, 48%, 8%);
