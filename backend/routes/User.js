@@ -21,7 +21,7 @@ userRouter.route("/login").post(login);
 userRouter.route("/logout").get(logout);
 userRouter.route("/user").get(getUser);
 userRouter.route("/me").get(isAuthenticated, myProfile);
-userRouter.route("/admin/update").get(isAuthenticated, updateUser);
+userRouter.route("/admin/update").put(isAuthenticated, updateUser);
 userRouter.route("/admin/timeline/add").post(isAuthenticated, addTimeline);
 userRouter.route("/admin/youtube/add").post(isAuthenticated, addyoutube);
 userRouter.route("/admin/project/add").post(isAuthenticated, addProject);

@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useEffect } from "react";
 import "./Home.css";
 import * as THREE from "three";
 import moonImage from "../../Images/moon.jpg";
@@ -48,7 +49,7 @@ const Home = () => {
     const venus = new THREE.Mesh(venusGemetry, venusMaterial);
     venus.position.set(8, 5, 5);
     // pointLight
-    const pointLight = new THREE.PointLight(0xffffff, 30);
+    const pointLight = new THREE.PointLight(0xffffff, 1);
     const pointLight2 = new THREE.PointLight(0xffffff, 1);
     pointLight.position.set(8, 5, 5);
     pointLight2.position.set(-8, -5, -5);

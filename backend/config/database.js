@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import database from 'mongoose';
+
 
 export const connectDatabase =()=>{
     mongoose.connect(process.env.MONGO_URI).then((c)=>{
