@@ -4,7 +4,7 @@ import { Button, Typography } from '@mui/material'
 import {AiOutlineProject} from "react-icons/ai";
 import { Delete } from '@mui/icons-material';
 import { FaRegSmileWink } from "react-icons/fa";
-const ProjectCard =({
+ export const ProjectCard =({
   url,
   projectImage,
   projectTitle,

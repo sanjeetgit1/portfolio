@@ -13,6 +13,9 @@ import { useEffect } from 'react';
 import { getUser, loadUser } from './actions/user';
 import AdminPanel from './components/Admin/AdminPanel';
 import Timeline from './components/Admin/Timeline';
+import Youtube from './components/Admin/Youtube';
+import Project from './components/Admin/Project';
+
 
  
 
@@ -44,6 +47,12 @@ const {loading}= useSelector((state)=>state.user);
          
          
           <Route path="/admin/timeline" element={isAuthenticated ? <Timeline/> :<Login/>}/>
+         
+         
+          <Route path="/admin/youtube" element={isAuthenticated ? <Youtube/> :<Login/>}/>
+         
+         
+          <Route path="/admin/project" element={isAuthenticated ? <Project/> :<Login/>}/>
          
          
     </Routes>
