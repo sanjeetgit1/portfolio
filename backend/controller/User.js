@@ -287,7 +287,7 @@ export const addTimeline = async (req, res) => {
 
 export const addyoutube = async (req, res) => {
   try {
-    const { url, tittle, image } = req.body;
+    const { url, title, image } = req.body;
     const user = await User.findById(req.user._id);
 
     const myCloud = await cloudinary.uploader.upload(image, {
@@ -296,8 +296,11 @@ export const addyoutube = async (req, res) => {
 
     user.youtube.unshift({
       url,
-      tittle,
-      image,
+      title,
+       image: {
+        public_id: myCloud.public_id,
+        url: myCloud.secure_url,
+      },
     });
 
     await user.save();

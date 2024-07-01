@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import * as THREE from "three";
 import moonImage from "../../Images/moon.jpg";
@@ -20,7 +19,7 @@ import {
 } from "react-icons/si";
 import Youtubecard from "../Youtubecard/Youtubecard";
 
-const Home = () => {
+const Home = ({ timelines, youtubes, skills }) => {
   useEffect(() => {
     const textureloader = new THREE.TextureLoader();
     const moonTexture = textureloader.load(moonImage);
@@ -39,7 +38,6 @@ const Home = () => {
     const canvas = document.querySelector(".homeCanvas");
     const renderer = new THREE.WebGLRenderer({ canvas });
 
-    // ShereGeometry
     const moonGemetry = new THREE.SphereGeometry(2, 64, 64);
     const moonMaterial = new THREE.MeshStandardMaterial({ map: moonTexture });
     const moon = new THREE.Mesh(moonGemetry, moonMaterial);
@@ -48,7 +46,7 @@ const Home = () => {
     const venusMaterial = new THREE.MeshBasicMaterial({ map: venusTexture });
     const venus = new THREE.Mesh(venusGemetry, venusMaterial);
     venus.position.set(8, 5, 5);
-    // pointLight
+
     const pointLight = new THREE.PointLight(0xffffff, 1);
     const pointLight2 = new THREE.PointLight(0xffffff, 1);
     pointLight.position.set(8, 5, 5);
@@ -58,11 +56,6 @@ const Home = () => {
     scene.add(pointLight);
     scene.add(pointLight2);
     scene.background = spaceTexture;
-
-    /*//pointLightHelper
-     const lightHelper = new THREE.PointLightHelper(pointLight);
-     scene.add(lightHelper);
-    */
 
     const constSpeed = 0.01;
     window.addEventListener("mousemove", (e) => {
@@ -94,18 +87,8 @@ const Home = () => {
 
     const animate = () => {
       requestAnimationFrame(animate);
-      // moon.rotation.x +=0.01;
-      // moon.rotation.y +=0.01;
       moon.rotation.y += 0.01;
       venus.rotation.y += 0.01;
-
-      // camera.position.x+=0.01
-      // moon.position.x +=0.01;
-      // moon.position.y +=0.01;
-      // moon.position.z +=0.01;
-      // moon.position.x -=0.02;
-      // moon.position.y -=0.02;
-      // moon.position.z -=0.02;
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.render(scene, camera);
     };
@@ -117,41 +100,33 @@ const Home = () => {
       <canvas className="homeCanvas"></canvas>
       <div className="homeContainer">
         <Typography variant="h3">TIMELINE</Typography>
-        <TimeLine timelines={[1, 2, 3, 4]} />
+        <TimeLine timelines={timelines} />
       </div>
       <div className="homeSkills">
-      <Typography variant="h3">Skills</Typography>
-      <div className="homeCubeSkills">
-        <div className="homeCubeSkillsFaces homeCubeSkillsFace1">
-        <img src="https://images.unsplash.com/photo-1718139207078-0f55b2a8a34d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D" alt="Face1" />
-        
+        <Typography variant="h3">Skills</Typography>
+        <div className="homeCubeSkills">
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace1">
+            <img src={skills.image1?.url} alt="Face1" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace2">
+            <img src={skills.image2?.url} alt="Face2" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace3">
+            <img src={skills.image3?.url} alt="Face3" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace4">
+            <img src={skills.image4?.url} alt="Face4" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace5">
+            <img src={skills.image5?.url} alt="Face5" />
+          </div>
+          <div className="homeCubeSkillsFaces homeCubeSkillsFace6">
+            <img src={skills.image6?.url} alt="Face6" />
+          </div>
         </div>
-        <div className="homeCubeSkillsFaces homeCubeSkillsFace2">
-        <img src="https://images.unsplash.com/photo-1718139207078-0f55b2a8a34d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D" alt="Face2" />
-        
-        </div>
-        <div className="homeCubeSkillsFaces homeCubeSkillsFace3">
-        <img src="https://plus.unsplash.com/premium_photo-1718169684197-adf733b5c7ef?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pbi1zYW1lLXNlcmllc3wxfHx8ZW58MHx8fHx8" alt="Face3" />
-        
-        </div>
-        <div className="homeCubeSkillsFaces homeCubeSkillsFace4">
-        <img src="https://images.unsplash.com/photo-1632395627732-005012dbc286?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D" alt="Face4" />
-        
-        </div>
-        <div className="homeCubeSkillsFaces homeCubeSkillsFace5">
-        <img src="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8" alt="Face5" />
-        
-        </div>
-        <div className="homeCubeSkillsFaces homeCubeSkillsFace6">
-        <img src="https://images.unsplash.com/photo-1718139207078-0f55b2a8a34d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D" alt="Face6" />
-        
-        </div>
-
-
-      </div>
-      <div className="cubeshadow"></div>
-      <div className="homeSkillsBox">
-        <SiCplusplus />
+        <div className="cubeshadow"></div>
+        <div className="homeSkillsBox">
+          <SiCplusplus />
           <SiHtml5 />
           <SiCss3 />
           <SiJavascript />
@@ -160,32 +135,24 @@ const Home = () => {
           <SiReact />
           <SiNodedotjs />
           <SiThreedotjs />
-
-      </div>
+        </div>
       </div>
       <div className="homeYoutube">
         <Typography variant="h3">YOUTUBE VIDEOS</Typography>
-         <div className="homeYoutubeWrapper">
-          <Youtubecard
-          image="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
-          title="Sample video"
-          />
-          <Youtubecard
-          image="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
-          title="Sample video"
-          />
-          <Youtubecard
-          image="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
-          title="Sample video"
-          />
-          <Youtubecard
-          image="https://images.unsplash.com/photo-1657586640569-4a3d4577328c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8"
-          title="Sample video"
-          />
-        
-         </div>
+        <div className="homeYoutubeWrapper">
+          {youtubes &&
+            youtubes.map((item) => (
+              <Youtubecard
+                key={item._id}
+                url={item.url}
+                title={item.title}
+                image={item.image ? item.image.url : ""}
+                isAdmin={false}
+                id={item._id}
+              />
+            ))}
+        </div>
       </div>
-     
     </div>
   );
 };

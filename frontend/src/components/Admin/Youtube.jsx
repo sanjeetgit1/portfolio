@@ -110,7 +110,7 @@ const Youtube = () => {
                 key={item._id}
                 url={item.url}
                 title={item.title}
-                image={item.image.url}
+                image={item.image ? item.image.url : ""}
                 isAdmin={true}
                 id={item._id}
               />
