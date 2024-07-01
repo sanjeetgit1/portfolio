@@ -18,6 +18,8 @@ import {
   SiThreedotjs,
 } from "react-icons/si";
 import Youtubecard from "../Youtubecard/Youtubecard";
+import { Link } from "react-router-dom";
+import { MouseOutlined } from "@mui/icons-material";
 
 const Home = ({ timelines, youtubes, skills }) => {
   useEffect(() => {
@@ -93,11 +95,57 @@ const Home = ({ timelines, youtubes, skills }) => {
       renderer.render(scene, camera);
     };
     animate();
+    
+    return window.addEventListener("scroll", () => {
+      camera.rotation.z = window.scrollY * 0.001;
+      camera.rotation.y = window.scrollY * 0.003;
+      // const skillsBox = document.getElementById("homeskillsBox");
+
+      // if (window.scrollY > 1100) {
+      //   skillsBox.style.animationName = "homeskillsBoxAnimationOn";
+      // } 
+      // else 
+      // {
+      //   skillsBox.style.animationName = "homeskillsBoxAnimationOff";
+      // }
+      
+      
+    
+    });
   }, []);
+
+ 
 
   return (
     <div className="home">
       <canvas className="homeCanvas"></canvas>
+      <div className="homeCanvasContainer">
+        <Typography variant="h1">
+          <p>S</p>
+          <p>A</p>
+          <p>N</p>
+          <p>J</p>
+          <p>E</p>
+          <p>E</p>
+          <p>T</p>
+          
+        </Typography>
+
+        <div className="homeCanvasBox">
+          <Typography variant="h2">DESIGNER</Typography>
+          <Typography variant="h2">DEVELOPER</Typography>
+          <Typography variant="h2">STUDENT</Typography>
+          <Typography variant="h2">SOFTWARE ENGINEER</Typography>
+        </div>
+
+        <Link to="/projects">VIEW WORK</Link>
+      </div>
+      <div className="homeScrollBtn">
+        <MouseOutlined />
+      </div>
+
+
+
       <div className="homeContainer">
         <Typography variant="h3">TIMELINE</Typography>
         <TimeLine timelines={timelines} />
@@ -125,7 +173,7 @@ const Home = ({ timelines, youtubes, skills }) => {
           </div>
         </div>
         <div className="cubeshadow"></div>
-        <div className="homeSkillsBox">
+        <div className="homeSkillsBox" id="homeskillsBox">
           <SiCplusplus />
           <SiHtml5 />
           <SiCss3 />

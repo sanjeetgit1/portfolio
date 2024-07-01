@@ -86,10 +86,10 @@ const userSchema = new mongoose.Schema({
         subtitle:String,
         description:String,
         quote:String,
-        avatar:{
-            public_id:String,
-            url:String,
-        },
+        avatar: {
+            public_id: String,
+            url: String,
+          },
     },
 
 });

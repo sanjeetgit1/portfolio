@@ -2,24 +2,24 @@ import React from "react";
 import "./About.css";
 import { Typography } from "@mui/material";
 
-const About = () => {
+const About = ({about}) => {
   return (
     <div className="about">
       <div className="aboutContainer">
-        <Typography>This is a sample qoute</Typography>
+        <Typography>{about.quote}</Typography>
       </div>
       <div className="aboutContainer2">
         <div>
-          <img src="https://media.licdn.com/dms/image/D4D03AQG8-VuE7fZayQ/profile-displayphoto-shrink_800_800/0/1718219409380?e=1724284800&v=beta&t=qyXHq69wbP6_ptghmV84xxKzq_E1rDNq4pF2ghRm05Q" alt="sk" 
+          <img src="https://media.licdn.com/dms/image/D4D03AQG8-VuE7fZayQ/profile-displayphoto-shrink_800_800/0/1718219409380?e=1725494400&v=beta&t=6M__Focx283IAxEFolh4BiAP1GTL2rlDpVOW_0IJ00Y"  alt="sk"
           className="aboutAvatar"/>
           <Typography variant="h4"
           style={{
             margin:"1vmax 0",
             color:'black'
           }}
-          >Sanjeet kushwaha</Typography>
-          <Typography>Full stack Developer</Typography>
-          <Typography>I'm a Student</Typography>
+          >{about.name}</Typography>
+          <Typography>{about.title}</Typography>
+          <Typography style={{ margin: "1vmax 0", textAlign: "center" }}>{about.subtitle}</Typography>
         </div>
         <div>
             <Typography
@@ -29,7 +29,7 @@ const About = () => {
                 letterSpacing:"5px",
                 textAlign:"right",
             }}
-            >This is description Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, similique unde. Nisi quas, ea dolor reiciendis facilis, sit molestiae rem quae officiis fugiat, dignissimos sint?</Typography>
+            >{about.description}</Typography>
         </div>
       </div>
     </div>

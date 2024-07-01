@@ -1,46 +1,73 @@
-import React, { useState } from "react";
+import { Button, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./Contact.css";
-import { Typography } from "@mui/material";
-const Contact = () => {
-  const [Name, setName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Message, setMessage] = useState("");
+import { useAlert } from "react-alert";
+import { contactUs } from "../../actions/user";
 
-  const contactFormHandler=(e)=>{
+const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const dispatch = useDispatch();
+  const alert = useAlert();
+
+  const {
+    loading,
+    message: alertMessage,
+    error,
+  } = useSelector((state) => state.update);
+
+  const contactFormHandler = (e) => {
     e.preventDefault();
-  }
+    dispatch(contactUs(name, email, message));
+  };
+
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch({ type: "CLEAR_ERRORS" });
+    }
+    if (alertMessage) {
+      alert.success(alertMessage);
+      dispatch({ type: "CLEAR_MESSAGE" });
+    }
+  }, [alert, error, alertMessage, dispatch]);
 
   return (
     <div className="contact">
       <div className="contactRightBar"></div>
-      <div className="contactContainer" >
-        <form className="contactContainerForm"  onSubmit={contactFormHandler}>
+
+      <div className="contactContainer">
+        <form className="contactContainerForm" onSubmit={contactFormHandler}>
           <Typography variant="h4">Contact Us</Typography>
+
           <input
             type="text"
             placeholder="Name"
             required
-            value={Name}
+            value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             required
-            value={Email}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+
           <textarea
             placeholder="Message"
             required
-            colse="30"
+            cols="30"
             rows="10"
-            value={Message}
+            value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          <button variant="contained" type="submit">
+          <Button variant="contained" type="submit" disabled={loading}>
             Send
-          </button>
+          </Button>
         </form>
       </div>
     </div>

@@ -38,21 +38,23 @@ import { FaRegSmileWink } from "react-icons/fa";
   )
 }
 
-const Projects = () => {
-  const projects=[1,2,3,5];
+const Projects = ({projects}) => {
+  
   return <div className='projects '>
     <Typography variant='h2'>
       Projects <AiOutlineProject/>
     </Typography>
 
     <div className='porjectsWrapper'>
-      { projects.map((project,index)=>(
+      { projects.map((item)=>(
         < ProjectCard
-        url="https://github.com/sanjeetgit1"
-  projectImage="https://plus.unsplash.com/premium_photo-1718204434029-d710f571cf14?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8"
-  projectTitle="Sample Project"
-  description="This is a sample project .Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum a saepe nemo optio corrupti, beatae animi dolores veniam distinctio debitis? "
-  technologies="Mongodb ,react , nodejs Express"
+        id={item._id}
+        key={item._id}
+        url={item.url}
+  projectImage={item.image.url}
+  projectTitle={item.title}
+  description={item.description}
+  technologies={item.technologies}
         />
       ))}
       

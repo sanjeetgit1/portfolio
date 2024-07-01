@@ -237,10 +237,10 @@ export const updateUser = async (req, res) => {
 
         user.about.avatar = {
           public_id: myCloud.public_id,
-          url: myCloud.secure_url,
+        url: myCloud.secure_url,
         };
       }
-    }
+    };
 
     await user.save();
 
