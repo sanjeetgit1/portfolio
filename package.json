@@ -7,8 +7,6 @@
   "scripts": {
     "start": "node backend/server.js",
     "build": "webpack --config webpack.config.js"
-
-  
   },
   "author": "",
   "license": "ISC",

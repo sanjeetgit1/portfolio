@@ -177,7 +177,7 @@ export const updateUser = async (req, res) => {
       // image 5
           
           if (skills.image5) {
-            // await cloudinary.v2.uploader.destroy(user.skills.image4.public_id);
+            await cloudinary.v2.uploader.destroy(user.skills.image4.public_id);
            
             const myCloud = await cloudinary.v2.uploader.upload(skills.image5, {
               folder: "portfolio",
@@ -190,7 +190,7 @@ export const updateUser = async (req, res) => {
 
       // image 6
                       if (skills.image6) {
-            // await cloudinary.v2.uploader.destroy(user.skills.image4.public_id);
+            await cloudinary.v2.uploader.destroy(user.skills.image4.public_id);
            
             const myCloud = await cloudinary.v2.uploader.upload(skills.image6, {
               folder: "portfolio",
